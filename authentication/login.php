@@ -1,4 +1,5 @@
 <?php
+session_start();
   require "db_connection.php";
 
   function error_alert($url){

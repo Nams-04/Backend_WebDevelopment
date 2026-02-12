@@ -13,7 +13,7 @@
       echo "
       <script>
         alert('New user added successfully! Please Log In');
-        document.location = 'login.php';
+        document.location = 'index.php';
       </script>";
     } else {
       echo "Error: " . $stmt->error;
