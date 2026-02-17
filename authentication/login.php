@@ -1,7 +1,12 @@
 <?php
 session_start();
   require "db_connection.php";
-
+  
+  if(isset($_SESSION['user_id']))
+    {
+      header("Location: dashboard.php");
+      exit();
+    }
   function error_alert($url){
     echo "
     <script>
@@ -20,6 +25,9 @@ session_start();
     if($stmt->num_rows > 0){
       $stmt->bind_result($id, $name);
       $stmt->fetch();
+      $_SESSION['user_id'] = $id;
+      $_SESSION['user_email'] = $email;
+      $_SESSION['user_name'] = $name;
       header("Location: dashboard.php");
       exit();
     }else{
@@ -37,7 +45,7 @@ session_start();
 </head>
 <body>
   <div id="content_div">
-    <h1>Welcome to CSCI 4060</h1>
+    <h1>Welcome to CSCI 6040</h1>
     <h2>Login with your credentials</h2>
     <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
       <input type="text" name="email" placeholder="Enter your email" required><br><br>
