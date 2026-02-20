@@ -1,0 +1,13 @@
+#cookie_div{
+    font-size: 16pt;
+  }
+  .btn{
+    cursor: pointer;
+    font-size: 16pt;
+  }
+  #remove_cookie_btn{
+    background-color: rgba(212, 0, 0, 0.637);
+  }
+  #remove_cookie_btn:hover{
+    background-color: rgba(230, 3, 3, 0.938);
+  }
